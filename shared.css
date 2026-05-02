@@ -1,0 +1,124 @@
+/* ── Icon rendering ───────────────────────────────────────── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.fill-icon {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ── Shadows ──────────────────────────────────────────────── */
+.ambient-shadow    { box-shadow: 0 10px 40px -10px rgba(0,96,101,.08); }
+.ambient-shadow-md { box-shadow: 0 4px  24px      rgba(0,96,101,.06); }
+
+/* ── Mobile menu ──────────────────────────────────────────── */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
+}
+#mobile-menu.open { max-height: 600px; }
+
+/* ── Scroll-reveal ────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Smooth scroll ────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+/* ── Page hero gradient ───────────────────────────────────── */
+.page-hero {
+  background: linear-gradient(135deg, #f3faff 0%, #e6f6ff 60%, #dbf1fe 100%);
+}
+
+/* ── Teal badge ───────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background: #dbf1fe;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #006065;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* ── Service card hover ───────────────────────────────────── */
+.service-card {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px -12px rgba(0,96,101,.14);
+}
+
+/* ── FAQ accordion ────────────────────────────────────────── */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease, padding .25s ease;
+}
+.faq-answer.open { max-height: 400px; }
+
+/* ── WhatsApp floating button ─────────────────────────────── */
+#wa-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: white;
+  border-radius: 9999px;
+  padding: 14px 20px 14px 16px;
+  box-shadow: 0 8px 32px rgba(37,211,102,.4);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform .2s ease, box-shadow .2s ease, padding .2s ease;
+  overflow: hidden;
+}
+#wa-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(37,211,102,.5);
+}
+/* Pulse ring */
+.wa-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 2px solid #25D366;
+  animation: wa-pulse 2.2s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes wa-pulse {
+  0%   { transform: scale(1);   opacity: .7; }
+  70%  { transform: scale(1.4); opacity: 0;  }
+  100% { transform: scale(1.4); opacity: 0;  }
+}
+.wa-label { display: none; }
+#wa-float {
+  padding: 14px;
+  border-radius: 50%;
+}
+
+/* ── Mobile hero text readability ─────────────────────────── */
+@media (max-width: 767px) {
+  .hero-gradient-mobile {
+    background: linear-gradient(to bottom,
+      rgba(255,255,255,0.92) 0%,
+      rgba(255,255,255,0.85) 60%,
+      rgba(255,255,255,0.60) 100%);
+  }
+}
